@@ -6,6 +6,9 @@
     --color-body: #918ca4;
 }
 
+
+/* Typography */
+
 html {
     /* 62.5% of 16px (default) = 10px  */
     font-size: 62.5%;
@@ -58,5 +61,35 @@ p {
 
     h3 {
         font-size: 2.4rem;
+    }
+}
+
+/* Links */
+a {
+    /* by default links come with an underline. we are preventing it */
+    text-decoration: none;
+}
+
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* to add an arrow after */
+.link-arrow::after {
+    content: '-->';
+    margin-left: 5px;
+    transition: margin 0.15s;
+}
+
+.link-arrow:hover::after {
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px){
+    .link-arrow {
+        font-size: 1.5rem;
     }
 }
