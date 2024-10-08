@@ -16,6 +16,11 @@
 }
 
 /* Typography */
+::selection {
+    background: var(--color-primary);
+    color: #fff;
+}
+
 
 html {
     /* 62.5% of 16px (default) = 10px  */
@@ -72,6 +77,7 @@ p {
 
     h3 {
         font-size: 2.4rem;
+        font-weight: 500;
     }
 }
 
@@ -147,12 +153,12 @@ a {
 .list {
     list-style: none; /* to get rid of the default style */
     padding-left: 0; /* to get rid of default left padding by the browser */
-    color: var(--color-headings);
 }
 
 .list--inline .list__item{
     display: inline-block;
     margin-right: 2rem;
+    color: var(--color-headings);
 }
 
 .list--tick {
@@ -432,9 +438,10 @@ a {
 }
 
 
-/* Media */
+/* Medias */
 .media {
     display: flex;
+    margin-bottom: 4rem;
 }
 
 .media__title {
@@ -643,19 +650,21 @@ a {
     color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1, 
+.block--dark h2, 
+.block--dark h3 {
     color: #fff;
 }
 
 .block--skewed-right {
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 
 .block--skewed-left {
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 
@@ -729,9 +738,6 @@ a {
 }
 
 /* Hero */
-.hero {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__tagline {
     font-size: 2rem;
@@ -813,5 +819,26 @@ a {
 @media screen and (min-width: 768px) {
     .feature:nth-of-type(even) .feature__content {
         order: 2;
+    }
+}
+
+
+/* Showcase Block */
+.block-showcase__image > img {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%; /* 1fr 1fr overrided. not depended on content size */
+    }
+
+    .block-showcase__image {
+        justify-self: end; /* to align the image to the end of its column */
+    }
+
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
     }
 }
