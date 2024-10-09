@@ -220,7 +220,7 @@ a {
     font-weight: 600;
     margin: 1rem 0;
     outline: 0;
-    padding: 2rem 3rem; /* vertical and horizontal*/
+    padding: 2rem 4vw; /* vertical and horizontal*/
     text-align: center; /* text of anchor element in center */
     text-transform: uppercase;
     white-space: nowrap; /* the text will not wrap on second line */
@@ -314,6 +314,7 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn {
@@ -558,6 +559,8 @@ a {
 
 /* Callouts */
 .callout {
+    transform: translateY(250px);
+    margin-top: -250px;
     padding: 4rem;
     border-radius: 5px;
 }
@@ -583,6 +586,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+    .callout{
+        transform: translateY(200px);
+    }
+
     /* to make the first column stretch to take the available space  */
     .callout .grid--1x2 {
         grid-template-columns: 1fr auto;
@@ -772,8 +779,9 @@ a {
 }
 
 .block-domain__prices {
+    color: var(--color-headings);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);  /* 6rem the height of the column */
     font-size: 2rem;
     font-weight: 600;
@@ -847,6 +855,7 @@ a {
 
 /* Footer */
 .footer {
+    padding-top: 30rem;
     background: #232323;
 }
 
@@ -892,6 +901,10 @@ a {
 
 
 @media screen and (min-width: 768px) {
+    .footer {
+        padding-top: 20rem;
+    }
+
     .footer__sections {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
